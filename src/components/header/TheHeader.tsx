@@ -4,13 +4,13 @@ import variables from "styles/variables";
 import { useTabletHook } from "hooks/isTablet";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import { useLocation } from "react-router-dom";
-import { rootPages } from "App";
+import { rootPages } from "routes/config";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state: any) => {
   return {
-    routeName: state.app.routeName
+    routeName: state.app.routeName,
   };
 };
 interface IProps {
@@ -46,7 +46,7 @@ export default connect(
   })
 );
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   header: {
     width: variables.header.width,
     minHeight: variables.header.height,
@@ -62,14 +62,14 @@ const useStyles = makeStyles(theme => ({
     transformOrigin: "50% 0",
     flexDirection: "row",
     [theme.breakpoints.up("sm")]: {
-      marginLeft: "180px"
-    }
+      marginLeft: "180px",
+    },
   },
   mobileHeader: {
     display: "flex",
     height: "100%",
     alignItems: "center",
-    paddingLeft: "12px"
+    paddingLeft: "12px",
   },
   backButtonWrapper: {
     width: "28px",
@@ -78,7 +78,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    paddingLeft: "8px"
+    paddingLeft: "8px",
   },
   desktopHeader: {
     position: "relative",
@@ -86,6 +86,6 @@ const useStyles = makeStyles(theme => ({
     height: "100%",
     display: "flex",
     alignItems: "center",
-    marginLeft: "10px"
-  }
+    marginLeft: "10px",
+  },
 }));

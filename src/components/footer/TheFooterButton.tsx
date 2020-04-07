@@ -1,29 +1,29 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 import variables from "styles/variables";
-import { Link } from "react-router-dom";
 interface IProps {
-  icon: JSX.Element;
-  to: string;
+  icon?: JSX.Element;
+  click: Function;
 }
 export default (props: IProps) => {
   const classes = useStyles();
   return (
-    <button className={classes.footerNavIconWrapper}>
-      <Link to={props.to}>
-        <div className={classes.buttonWrapper}>{props.icon}</div>
-      </Link>
+    <button
+      className={classes.footerNavIconWrapper}
+      onClick={() => props.click}
+    >
+      <div className={classes.buttonWrapper}>{props.icon}</div>
     </button>
   );
 };
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   buttonWrapper: {
     width: "100%",
     height: "100%",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   footerNavIconWrapper: {
     "& button": {
@@ -31,15 +31,15 @@ const useStyles = makeStyles(theme => ({
       padding: "0",
       margin: "0",
       "& a": {
-        color: "white"
+        color: "white",
       },
       "& div": {
         width: "100%",
         height: "100%",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
-      }
+        alignItems: "center",
+      },
     },
     flex: "1",
     height: "100%",
@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     "& svg": {
       display: "block",
       width: variables.space["24"],
-      height: variables.space["24"]
-    }
-  }
+      height: variables.space["24"],
+    },
+  },
 }));

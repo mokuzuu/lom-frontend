@@ -81,7 +81,7 @@ export default (props: IProps) => {
       }
       setListLoadingStatus(false);
     });
-  }, []);
+  }, [props]);
 
   React.useEffect(() => {
     if (listRef.current) {

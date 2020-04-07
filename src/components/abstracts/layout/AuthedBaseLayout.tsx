@@ -6,48 +6,46 @@ import SideBarGroup from "components/sideBar/TheSideBarGroup";
 import Footer from "components/footer/TheFooter";
 import { makeStyles } from "@material-ui/core";
 import variables from "styles/variables";
-import ListAltIcon from "@material-ui/icons/ListAlt";
-import { routes } from "routes";
+import { Navs } from "components/types";
+
 interface IProps {
-  children: JSX.Element;
+  children: React.ReactNode;
+  navIcons: Navs;
 }
-const navIcons = [
-  {
-    title: "List",
-    to: routes.characters,
-    icon: <ListAltIcon />
-  }
-];
-export default (props: IProps) => {
+
+const BaseLayout: React.SFC<IProps> = ({ children, navIcons }, props) => {
   const globalClasses = UseStylesGlobal();
   const classes = useStyles();
   const isTablet = useTabletHook();
+
   return (
     <div className={globalClasses.app}>
       <Header />
-      <main className={classes.main}>{props.children}</main>
+      <main className={classes.main}>{children}</main>
       {isTablet ? (
         <Footer navs={navIcons} />
       ) : (
-          <div className={classes.sizeBar}>
-            <SideBarGroup navs={navIcons} />
-          </div>
-        )}
+        <div className={classes.sideBar}>
+          <SideBarGroup navs={navIcons} />
+        </div>
+      )}
     </div>
   );
 };
 
-const useStyles = makeStyles(theme => ({
+export default BaseLayout;
+
+const useStyles = makeStyles((theme) => ({
   main: {
     paddingTop: variables.header.height,
     [theme.breakpoints.up("sm")]: {
-      marginLeft: "180px"
+      marginLeft: "180px",
     },
     [theme.breakpoints.down("xs")]: {
-      marginBottom: variables.footer.height
-    }
+      marginBottom: variables.footer.height,
+    },
   },
-  sizeBar: {
+  sideBar: {
     zIndex: variables.zIndex.sideBar,
     width: "180px",
     bottom: "0px",
@@ -56,6 +54,6 @@ const useStyles = makeStyles(theme => ({
     top: "0px",
     margin: "0",
     padding: "0",
-    backgroundColor: variables.color.primary
-  }
+    backgroundColor: variables.color.primary,
+  },
 }));
