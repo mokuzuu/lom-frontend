@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import Routes from "routes";
-import store, { AuthAction } from "store/index";
+import store from "store/index";
 import axiosInit from "init/axios";
 import history from "init/history";
 interface IApp {}

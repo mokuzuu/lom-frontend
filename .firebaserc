@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "lom-app-601b0",
+    "production": "lom-frontend-production"
+  }
+}

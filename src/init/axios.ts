@@ -1,11 +1,14 @@
 import axios from "axios";
 import { AuthAction } from "store/index";
-import { redirectTo } from "routes/config";
+import { redirectTo, routes } from "routes/config";
 import history from "init/history";
+// const functions = require("firebase-functions");
+
 export default () => {
-  axios.defaults.baseURL = "http://localhost:3001/";
+  console.log(process.env);
+  axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
   axios.defaults.headers.post["Access-Control-Allow-Origin"] =
-    "http://localhost:3001";
+    process.env.REACT_APP_BASE_URL;
   axios.defaults.withCredentials = true;
 
   // axios.defaults.headers.post["Content-type"] = "application/json";
@@ -23,8 +26,8 @@ export default () => {
       console.log(error.response.status);
       if (
         error.response.status === 401 &&
-        error.response.config.url !== "/signin" &&
-          error.response.config.url !== "/signup"
+        error.response.config.url !== routes.signIn &&
+        error.response.config.url !== routes.signUp
       ) {
         localStorage.setItem("Authorized", AuthAction.SignOut);
         alert("you are not authorised!");

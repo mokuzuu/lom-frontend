@@ -36,6 +36,7 @@ const navIcons: Navs = [
     click: async (history: any) => {
       const result = await testAuth();
       if (result.status === 200) {
+        console.log(result);
         alert(result.data.message);
       }
     },
