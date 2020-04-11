@@ -1,0 +1,29 @@
+[debug] [2020-04-08T06:07:47.726Z] ----------------------------------------------------------------------
+[debug] [2020-04-08T06:07:47.729Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\matsu\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-04-08T06:07:47.729Z] CLI Version:   8.0.2
+[debug] [2020-04-08T06:07:47.729Z] Platform:      win32
+[debug] [2020-04-08T06:07:47.729Z] Node Version:  v10.15.1
+[debug] [2020-04-08T06:07:47.743Z] Time:          Wed Apr 08 2020 16:07:47 GMT+1000 (Australian Eastern Standard Time)
+[debug] [2020-04-08T06:07:47.743Z] ----------------------------------------------------------------------
+[debug] [2020-04-08T06:07:47.743Z] 
+[debug] [2020-04-08T06:07:47.754Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-08T06:07:47.755Z] > authorizing via signed-in user
+[debug] [2020-04-08T06:07:47.755Z] [iam] checking project lom-frontend-production for permissions ["firebase.projects.get"]
+[debug] [2020-04-08T06:07:47.758Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-04-08T06:07:47.758Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-04-08T06:07:48.201Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 08 Apr 2020 06:07:48 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-08T06:07:48.208Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/lom-frontend-production:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-04-08T06:07:48.742Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 08 Apr 2020 06:07:48 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=196","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-08T06:07:48.743Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/lom-frontend-production  
+ 
+[debug] [2020-04-08T06:07:49.432Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 08 Apr 2020 06:07:49 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Serving from 'C:\Users\matsu\Projects\lom\frontend'...
+[info] 
+[debug] [2020-04-08T06:07:49.437Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/lom-frontend-production/webApps/-/config  
+ 
+[debug] [2020-04-08T06:07:50.375Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 08 Apr 2020 06:07:50 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting: Serving hosting files from: build
+[info] +  hosting: Local server: http://localhost:5000
